@@ -6,7 +6,7 @@ jobs:
   guard:
     permissions:
       security-events: write
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: CloudFormation Guard Analyze
     steps:
       - name: CloudFormation Guard Analyze
