@@ -1,9 +1,8 @@
 name: CloudFormation Guard Analysis
 
 on:
-  push:
-  # schedule:
-  #   - cron: '*/15 * * * *'
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   guard:
@@ -13,7 +12,7 @@ jobs:
     name: CloudFormation Guard Analyze
     steps:
       - name: CloudFormation Guard Analyze
-        uses: dannyvassallo/cloudformation-guard@action-v0.0.105
+        uses: aws-cloudformation/cloudformation-guard@action-v0.0.3
         with:
           rules: 'resources/validate/rules'
           data: 'resources/validate/data'
