@@ -1,8 +1,6 @@
 name: CloudFormation Guard Analysis
 
-on:
-  schedule:
-    - cron: '*/15 * * * *'
+on: workflow_dispatch
 
 jobs:
   guard:
