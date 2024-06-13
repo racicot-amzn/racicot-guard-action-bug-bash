@@ -1,0 +1,20 @@
+name: CloudFormation Guard Analysis
+
+on:
+  push:
+  # schedule:
+  #   - cron: '*/15 * * * *'
+
+jobs:
+  guard:
+    permissions:
+      security-events: write
+    runs-on: ubuntu-latest
+    name: CloudFormation Guard Analyze
+    steps:
+      - name: CloudFormation Guard Analyze
+        uses: dannyvassallo/cloudformation-guard@action-v0.0.105
+        with:
+          rules: 'resources/validate/rules'
+          data: 'resources/validate/data'
+          analyze: true
