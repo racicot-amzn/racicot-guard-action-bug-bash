@@ -1,0 +1,16 @@
+name: CloudFormation Guard validate
+
+on:
+  push:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: CloudFormation Guard validate
+    steps:
+      - name: CloudFormation Guard validate
+        uses: aws-cloudformation/cloudformation-guard@action-v0.0.1
+        with:
+          rules: 'resources/validate/rules'
+          data: 'resources/validate/data'
